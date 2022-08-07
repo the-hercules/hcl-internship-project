@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+tf-idf
+{% endblock %}
+{% block content %}
+ <form method="post">
+    <label for="for_query_tfidf">search query</label>
+    <input id="for_query_tfidf" name="query_tfidf" placeholder="enter search query" value="{{request.form['query_tfidf']}}">
+    <br>
+    <label for="for_doc11">doc0</label>
+    <input id="for_doc11" name="doc11" value="{{request.form['doc11']}}">
+    <br><br>
+    <label for="for_doc12">doc1</label>
+    <input id="for_doc12" name="doc12" value="{{request.form['doc12']}}">
+    <br><br>
+    <label for="for_doc13">doc2</label>
+    <input id="for_doc13" name="doc13" value="{{request.form['doc13']}}">
+    <br><br>
+    <label for="for_doc14">doc3</label>
+    <input id="for_doc14" name="doc14" value="{{request.form['doc14']}}">
+    <input type="submit">
+    <br>
+     {% for _ in finallist %}
+        <h3>{{_}}</h3>
+    {%endfor%}
+ </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+bm25
+{% endblock %}
+
+{% block content %}
+     <form method="post">
+    <label for="for_query_bm25">search query</label>
+    <input id="for_query_bm25" name="query_bm25" placeholder="enter search query" value="{{request.form['query_bm25']}}">
+    <br>
+    <label for="for_doc21">doc0</label>
+    <input id="for_doc21" name="doc21" value="{{request.form['doc21']}}">
+    <br><br>
+    <label for="for_doc22">doc1</label>
+    <input id="for_doc22" name="doc22" value="{{request.form['doc22']}}">
+    <br><br>
+    <label for="for_doc23">doc2</label>
+    <input id="for_doc23" name="doc23" value="{{request.form['doc23']}}">
+    <br><br>
+    <label for="for_doc24">doc3</label>
+    <input id="for_doc24" name="doc24" value="{{request.form['doc24']}}">
+    <input type="submit">
+    <br>
+     {% for _ in bmlist %}
+        <h3>{{_}}</h3>
+    {%endfor%}
+ </form>
+{% endblock %}

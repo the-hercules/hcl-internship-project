@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+BERT
+{% endblock %}
+{% block content %}
+   <form method="post">
+    <label for="for_query">search query</label>
+    <input id="for_query" name="query" placeholder="enter search query" value="{{request.form['query']}}">
+    <br>
+    <label for="for_doc0">doc0</label>
+    <input id="for_doc0" name="doc0" value="{{request.form['doc0']}}">
+    <br><br>
+    <label for="for_doc1">doc1</label>
+    <input id="for_doc1" name="doc1" value="{{request.form['doc1']}}">
+    <br><br>
+    <label for="for_doc2">doc2</label>
+    <input id="for_doc2" name="doc2" value="{{request.form['doc2']}}">
+    <br><br>
+    <label for="for_doc3">doc3</label>
+    <input id="for_doc3" name="doc3" value="{{request.form['doc3']}}">
+    <input type="submit">
+    <br>
+    {% for _ in bert %}
+        <h3>{{_}}</h3>
+    {%endfor%}
+</form>
+{% endblock %}

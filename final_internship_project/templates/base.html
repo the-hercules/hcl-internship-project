@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+
+
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">index</a>
+        <a href="{{ url_for('bert_f') }}">Bert</a>
+        <a href="{{ url_for('bm25_f') }}">BM25</a>
+        <a href="{{ url_for('tfidf_f') }}">tf-idf</a>
+
+    </nav>
+    <hr>
+        {% block content %} {% endblock %}
+</body>
+</html>
